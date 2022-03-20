@@ -40,9 +40,7 @@ for item in list_data:  # помещаю список в переменную
     plus = '+'
     pl_item = plus in item  # проверяю, есть ли плюс в переменной
     if item == quotes:  # если это кавычка убираю пробелы
-        message += ''
         message += item
-        message += ''
     elif item > '0' and item < '9' or pl_item == True:  # если это цифра или содержит плюс, вставлять как есть
         message += item
         continue
