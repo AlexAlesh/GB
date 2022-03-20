@@ -51,5 +51,7 @@ for item in list_data:  # помещаю список в переменную
         message += item
         message += ' '
 
+final = message.replace('  ',' ') # удаляю двойные пробелы
+final = message.strip() # удаляю пробел в начале
 print(list_data)
-print(message)
+print(final)
