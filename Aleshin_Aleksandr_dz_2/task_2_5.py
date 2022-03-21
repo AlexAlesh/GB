@@ -8,7 +8,7 @@ message = ''
 for money in rub:
     if money == int(money):  # целые числа
         money_int = str(money)
-        message += f'{money_int} руб 00 коп,'
+        message += f'{money_int} руб 00 коп, '
     elif money == float(money):
         money_int_fl = money * 10 // 10  # получаю целое число
         int_fl = (money - money_int_fl) * 100 # получаю остаток
@@ -32,3 +32,12 @@ print(rub_copy)
 rev = rub_copy[:5]
 rev.sort()
 print(rev)
+
+"""Второй вариант, после урока"""
+rub = [95.15, 42, 65.2, 100.58, 52, 45.22, 67, 56.8, 120, 153.03, 0.7, 0.05]
+message = ""
+for i in rub:
+    price = f'{i:.2f}'.split('.')
+    message += (f'{price[0]} руб {price[1]} коп, ')
+
+print(message)
