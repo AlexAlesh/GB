@@ -13,6 +13,7 @@ def num_translate_adv(num):
         else:
             return numbers.get(num)
 
+
 numbers = {'one': 'один',
            'two': 'два',
            'three': 'три',
