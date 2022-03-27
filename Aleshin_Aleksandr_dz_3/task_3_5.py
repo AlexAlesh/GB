@@ -9,7 +9,7 @@ def get_jokes(quiry_int, quiry='y'):
     :return: список с шутками
     """
     i = 0
-    control = len(nouns)
+    control = min(len(nouns), len(adverbs), len(adjectives))
     ls = []
     while quiry_int > i:
         if quiry == 'y':
@@ -22,8 +22,8 @@ def get_jokes(quiry_int, quiry='y'):
             jokes = f'{noun} {adverb} {adjective} '
             ls += [jokes]
             nouns.remove(noun), adverbs.remove(adverb), adjectives.remove(adjective)
-            if len(ls) >= control:
-                ls += ['УПС! Мой словарный запас иссяк :( ']
+            if quiry_int >= control:
+                ls = ['УПС!!! я столько не придумаю, давай попробуем 4 шутки))']
         i += 1
     return ls
 
@@ -31,7 +31,5 @@ def get_jokes(quiry_int, quiry='y'):
 nouns = ["автомобиль", "лес", "огонь", "город", "дом"]
 adverbs = ["сегодня", "вчера", "завтра", "позавчера", "ночью"]
 adjectives = ["веселый", "яркий", "зеленый", "утопичный", "мягкий"]
-
 quiry_int = int(input('Сколько шуток сформировать? '))
-
 print(get_jokes(quiry_int, quiry='n'))
