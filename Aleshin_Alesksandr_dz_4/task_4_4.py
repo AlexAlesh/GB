@@ -1,6 +1,6 @@
-import task_4_3
+import utils
 
 
-task_4_3.currency_rates('INR')
-task_4_3.currency_rates('KGS')
-task_4_3.currency_rates('USD')
+utils.currency_rates('INR')
+utils.currency_rates('KGS')
+utils.currency_rates('USD')
