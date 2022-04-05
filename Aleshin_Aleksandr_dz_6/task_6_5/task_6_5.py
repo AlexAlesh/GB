@@ -13,5 +13,4 @@ with open(input('Создание файла, название файла с р�
         f.write('ошибка: код 1')
     else:
         for users, hobbys in zip_longest(user, hobby):
-            print('файл успешно создан')
             f.write(f'{users} : {hobbys} \n')
