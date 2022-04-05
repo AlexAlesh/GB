@@ -14,3 +14,4 @@ with open(input('Создание файла, название файла с р�
     else:
         for users, hobbys in zip_longest(user, hobby):
             f.write(f'{users} : {hobbys} \n')
+    print('файл успешно создан')
