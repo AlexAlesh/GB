@@ -1,14 +1,23 @@
 import sys
 with open('bd.txt', 'r+', encoding='utf-8') as f:
-    sale = f.read()
-    num = tuple(sale.replace('\n', ' ').strip().split(' '))
-    s_a = sys.argv[1:]
-    if len(s_a) == 1:
-        for i in num[int(sys.argv[1]):]:
-            print(i)
-    elif len(s_a) == 2:
-        for i in num[int(sys.argv[1]):int(sys.argv[2])]:
-            print(i)
+    s_a = sys.argv[1:]      # аргументы из командной строки
+    count = 0       # счетчик объектов в файле они
+    for i in f:     # проходимся по каждому объекту из файла
+        count += 1      # добавляем в счетчик
+    if len(s_a) == 1:       # если 1 аргумент
+        start = int(s_a[0])     # первый индекс из к.с
+        end = count     # последней индекс счетчика
+        f.seek(0)       # курсор в начало строки
+    elif len(s_a) == 2:     # если 2 аргумент
+        start = int(s_a[0])     # первый индекс из к.с
+        end = int(s_a[1])       # конечный индекс из к.с
+        f.seek(0)
     else:
-        for i in num:
-            print(i)
+        start = 0
+        end = count
+        f.seek(0)
+    for idx, line in enumerate(f):      # ф делится на индекс и объект
+        if start <= idx <= end:
+            # от заданного индекса и курсором от индекса до последнего, idx индекс промежуточного объекта
+            print(line.replace('\n', ''))     # объекты по подходящим индексам без переноса
+
