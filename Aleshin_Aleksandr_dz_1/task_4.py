@@ -19,31 +19,31 @@
 """
 
 
-def identification(self):
-    for key, val in users.items():
-        if val[1] == 0:
-            aut = input(f'{key}, желаете авторизоваться? (y/n)')
-            if aut == 'n':
-                print(f'Очень жаль {key}')
+def identification(self):  # O(1)
+    for key, val in users.items():  # O(n)
+        if val[1] == 0:  # O(1)
+            aut = input(f'{key}, желаете авторизоваться? (y/n)')  # O(1)
+            if aut == 'n':  # O(1)
+                print(f'Очень жаль {key}')  # O(1)
             else:
-                val[1] = 1
-                print(f'{key}, вы авторизовались!')
+                val[1] = 1  # O(1)
+                print(f'{key}, вы авторизовались!')  # O(1)
         else:
-            print(f'{key}, вы авторизованы!)')
+            print(f'{key}, вы авторизованы!)')  # O(1)
 
 
-def identification_aut(self):
-    for val in users.values():
-        for i in range(1, len(val), 1):
-            if val[i] == 0:
-                aut = input('вы не авторизованы, желаете авторизоваться? (y/n)')
-                if aut == 'n':
-                    print('вы не авторизованы')
+def identification_aut(self):  # O(n2)
+    for val in users.values():  # O(n)
+        for i in range(1, len(val), 1):  # O(n)
+            if val[i] == 0:  # O(1)
+                aut = input('вы не авторизованы, желаете авторизоваться? (y/n)')  # O(1)
+                if aut == 'n':  # O(1)
+                    print('вы не авторизованы')  # O(1)
                 else:
-                    val[i] = 1
-                    print('вы авторизовались')
+                    val[i] = 1  # O(1)
+                    print('вы авторизовались')  # O(1)
             else:
-                print('вы авторизованы')
+                print('вы авторизованы')  # O(1)
 
 
 users = {'fox': [123456, 1],
@@ -51,5 +51,5 @@ users = {'fox': [123456, 1],
          'gura': [654123, 0],
          'grrrrr': [52486, 1]}  # 1-авторизация выполнена, 0-не авторизован
 
-#identification(users)
+identification(users)
 identification_aut(users)
